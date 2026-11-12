@@ -1,23 +1,35 @@
 
-body {
-    font-family: Arial;
-    text-align: center;
-    background: lightblue;
+function addStudent() {
+    let name = document.getElementById("name").value;
+    let roll = document.getElementById("roll").value;
+
+    if (name == "" || roll == "") {
+        alert("Enter all details");
+        return;
+    }
+
+    let row = "<tr><td>" + name +
+        "</td><td>" + roll + "</td></tr>";
+
+    document.getElementById("data").innerHTML += row;
+
+    alert("Student Registered Successfully");
+
+    document.getElementById("name").value = "";
+    document.getElementById("roll").value = "";
 }
 
-input {
-    padding: 10px;
-    margin: 10px;
-}
+function searchStudent() {
+    let value = document.getElementById("search").value;
+    let rows = document.getElementById("data").rows;
 
-button {
-    padding: 10px;
-    background: green;
-    color: white;
-}
+    for (let i = 0; i < rows.length; i++) {
+        if (rows[i].cells[1].innerHTML == value) {
+            alert("Student Found: " +
+                rows[i].cells[0].innerHTML);
+            return;
+        }
+    }
 
-table {
-    margin: 20px auto;
-    background: white;
-    padding: 10px;
+    alert("Student Not Found");
 }
