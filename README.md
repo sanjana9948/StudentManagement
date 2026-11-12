@@ -1,2 +1,2 @@
 Student Management System
-Version 2 - Registration Feature
+Registration and Search Features
