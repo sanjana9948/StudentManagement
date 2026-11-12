@@ -10,6 +10,7 @@ function addStudent() {
 
     let row = "<tr><td>" + name +
         "</td><td>" + roll + "</td></tr>";
+        "</td><td>" + roll + "</td></tr>";
 
     document.getElementById("data").innerHTML += row;
 
